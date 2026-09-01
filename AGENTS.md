@@ -3,7 +3,7 @@
 ## 1. Attributions & Framework Sources
 
 - **Solo Orchestration Environment**: [Solo Terminal](https://soloterm.com) ([Documentation](https://soloterm.com/docs), [Agent API](https://soloterm.com/api/v1/docs), [`solo.yml` Spec](https://soloterm.com/docs/projects/solo-yml), [Agent Spawning Guide](https://soloterm.com/docs/workflows/agents-spawning-agents)).
-- **Oh-My-Antigravity (OMA)**: Multi-agent operating framework for Antigravity (`agy`), defining cognitive roles, state contracts, and quality-gated lifecycles.
+- **Oh-My-Antigravity (OMA)**: [Oh-My-Antigravity Repository](https://github.com/Joonghyun-Lee-Frieren/oh-my-antigravity) — Multi-agent operating framework for Antigravity (`agy`), defining cognitive roles, state contracts, and quality-gated lifecycles.
 
 ---
 

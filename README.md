@@ -17,6 +17,7 @@ This starter integrates two core agentic frameworks:
 - **MCP Tools Overview**: [https://soloterm.com/docs/mcp-tools/overview](https://soloterm.com/docs/mcp-tools/overview)
 
 ### 2. Oh-My-Antigravity (OMA)
+- **Repository**: [https://github.com/Joonghyun-Lee-Frieren/oh-my-antigravity](https://github.com/Joonghyun-Lee-Frieren/oh-my-antigravity)
 - **Framework**: Oh-My-Antigravity (`oh-my-antigravity`), the specialized multi-agent operating system and subagent suite designed for the Antigravity CLI (`agy`) ecosystem.
 - **Roster & Archetypes**: Designed around specialized cognitive roles (Director, Product, Interview, Architect, Consultant, Consensus, Planner, Researcher, Executor, Debugger, Quick, Reviewer, Editor, Verifier) communicating via structured state, scratchpads, and quality-gated handoffs.
 
