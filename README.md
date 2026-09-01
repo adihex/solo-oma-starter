@@ -4,6 +4,24 @@ This template provides a declarative setup for managing projects in **Solo** wit
 
 ---
 
+## Attributions & Official Sources
+
+This starter integrates two core agentic frameworks:
+
+### 1. Solo (Solo Terminal)
+- **Website & Documentation**: [https://soloterm.com](https://soloterm.com)
+- **Official Docs**: [https://soloterm.com/docs](https://soloterm.com/docs)
+- **Agent-Readable Docs API**: [https://soloterm.com/api/v1/docs](https://soloterm.com/api/v1/docs)
+- **`solo.yml` Specification**: [https://soloterm.com/docs/projects/solo-yml](https://soloterm.com/docs/projects/solo-yml)
+- **Agent Orchestration & Spawning**: [https://soloterm.com/docs/workflows/agents-spawning-agents](https://soloterm.com/docs/workflows/agents-spawning-agents)
+- **MCP Tools Overview**: [https://soloterm.com/docs/mcp-tools/overview](https://soloterm.com/docs/mcp-tools/overview)
+
+### 2. Oh-My-Antigravity (OMA)
+- **Framework**: Oh-My-Antigravity (`oh-my-antigravity`), the specialized multi-agent operating system and subagent suite designed for the Antigravity CLI (`agy`) ecosystem.
+- **Roster & Archetypes**: Designed around specialized cognitive roles (Director, Product, Interview, Architect, Consultant, Consensus, Planner, Researcher, Executor, Debugger, Quick, Reviewer, Editor, Verifier) communicating via structured state, scratchpads, and quality-gated handoffs.
+
+---
+
 ## The Full 14-Agent OMA Roster
 
 | Agent Role | Specialty |
