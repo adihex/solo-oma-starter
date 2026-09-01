@@ -1,0 +1,49 @@
+name: Monorepo Project
+icon_initials: OM
+
+processes:
+  Dev Server:
+    command: npm run dev
+    auto_start: false
+    auto_restart: false
+    restart_when_changed:
+      - "apps/**"
+      - "packages/**"
+      - "package.json"
+      - "turbo.json"
+    env:
+      NODE_ENV: development
+      PAGER: cat
+      GH_PAGER: cat
+
+  Build:
+    command: npm run build
+    auto_start: false
+    auto_restart: false
+    env:
+      PAGER: cat
+      GH_PAGER: cat
+
+  Test:
+    command: npm run test
+    auto_start: false
+    auto_restart: false
+    env:
+      PAGER: cat
+      GH_PAGER: cat
+
+  Typecheck:
+    command: npm run typecheck
+    auto_start: false
+    auto_restart: false
+    env:
+      PAGER: cat
+      GH_PAGER: cat
+
+  Lint:
+    command: npm run lint
+    auto_start: false
+    auto_restart: false
+    env:
+      PAGER: cat
+      GH_PAGER: cat
