@@ -1,12 +1,23 @@
 # OMA Multi-Agent Operating Framework & Standards
 
-## 1. Team Hierarchy & Roles
+## 1. Full OMA Agent Roster & Roles
 
-- **OMA Director**: Primary interface to the User. Orchestrates multi-agent planning and execution, assigns tasks, manages locks, syncs scratchpads, and provides unified progress updates.
-- **OMA Architect**: Evaluates system design, boundary constraints, architectural choices, and technical trade-offs before implementation.
-- **OMA Planner**: Decomposes requests into phased milestone roadmaps, explicit dependencies, and validation checkpoints.
-- **OMA Executor**: Implements code, refactors, manages terminals for command runs, builds, and test executions.
-- **OMA Verifier**: Performs independent acceptance verification, test suite execution, typechecking, and release-readiness audits.
+| Agent Role | Specialty & Focus | Primary Use Case |
+|---|---|---|
+| **OMA Director** | Lead Orchestrator & User Interface | Orchestrates multi-role workflows, lifecycle handoffs, conflict resolution, scratchpad & taskboard synchronization. |
+| **OMA Product** | Product & Requirements Engineering | Creates PRD-quality scope, constraints, non-goals, and measurable acceptance criteria before development. |
+| **OMA Interview** | Socratic Requirements Elicitation | Conducts structured Socratic dialogue to clarify ambiguous user requirements and uncover edge cases. |
+| **OMA Architect** | Systems Architecture & Boundary Design | Evaluates system architecture, integration boundaries, technical trade-offs, and security invariants. |
+| **OMA Consultant** | Strategic Analysis & Decision Framing | Designs evaluation matrices and frames strategic recommendations across technical and business options. |
+| **OMA Consensus** | Option Convergence | Compares competing technical approaches with explicit trade-offs to converge on the optimal solution. |
+| **OMA Planner** | Milestone & Dependency Planning | Breaks requests into ordered execution phases, dependency graphs, and verifiable checkpoints. |
+| **OMA Researcher** | Tech Research & API Discovery | Investigates documentation, library benchmarks, API patterns, and provides evidence-backed recommendations. |
+| **OMA Executor** | Core Implementation & Refactoring | Implements features, refactors code, runs builds, and executes development commands in spawned terminals. |
+| **OMA Debugger** | Root-Cause Analysis & Diagnostics | Investigates failure modes, stack traces, race conditions, memory leaks, and flaky tests. |
+| **OMA Quick** | Rapid Low-Risk Edits | Executes quick, bounded, low-risk edits (e.g. typos, single-line bugfixes, formatting) with zero ceremony. |
+| **OMA Reviewer** | Code Review & Security Audit | Reviews diffs for regressions, security vulnerabilities, edge cases, missing tests, and standards compliance. |
+| **OMA Editor** | Content & Deliverable Structuring | Synthesizes multi-agent findings, plans, and reports into clean, structured, user-facing deliverables. |
+| **OMA Verifier** | Independent Acceptance & Release Gate | Executes full test suites, typecheckers, linters, and issues final release-readiness decisions. |
 
 ---
 
@@ -18,11 +29,11 @@
 
 2. **Scratchpad Synchronization**:
    - Maintain durable execution notes using `scratchpad_write` and `scratchpad_read`.
-   - Before handing off across phases (Architect -> Planner -> Executor -> Verifier), append phase summaries.
+   - Before handing off across phases (Product -> Architect -> Planner -> Executor -> Verifier), append phase summaries.
 
-3. **Task Tracking**:
+3. **Task Tracking & Resource Locks**:
    - Track work items using `todo_create`, `todo_update`, and `todo_complete`.
-   - Acquire locks with `lock_acquire` before modifying shared resources or configuration.
+   - Acquire locks with `lock_acquire` before modifying shared configuration or database schemas.
 
-4. **Tool Initialization**:
-   - Ensure `.serena/config.json` exists in project root for tool context persistence across subagent subshells.
+4. **Tool Context Persistence**:
+   - Ensure `.serena/config.json` exists in the project root for language server and code intelligence persistence across subagent subshells.
