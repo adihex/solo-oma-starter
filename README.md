@@ -21,6 +21,10 @@ This starter integrates two core agentic frameworks:
 - **Framework**: Oh-My-Antigravity (`oh-my-antigravity`), the specialized multi-agent operating system and subagent suite designed for the Antigravity CLI (`agy`) ecosystem.
 - **Roster & Archetypes**: Designed around specialized cognitive roles (Director, Product, Interview, Architect, Consultant, Consensus, Planner, Researcher, Executor, Debugger, Quick, Reviewer, Editor, Verifier) communicating via structured state, scratchpads, and quality-gated handoffs.
 
+### 3. i-have-adhd (High-Density Output Protocol)
+- **Repository**: [https://github.com/ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd)
+- **Format**: Eliminates preamble, leads with immediate concrete actions, numbers multi-step execution paths, and surfaces visible status checkmarks.
+
 ---
 
 ## The Full 14-Agent OMA Roster
@@ -99,3 +103,53 @@ solo/spawn_agent(
 
 ### Step 4: Interact Directly with OMA Director
 Send your prompts and feature requests to **OMA Director**. The Director coordinates with the full roster of specialist agents (Architect, Product, Planner, Executor, Debugger, Reviewer, Verifier, etc.) to deliver tasks end-to-end.
+
+---
+
+## Advanced `agy` Optimizations
+
+1. **Adaptive Reasoning Effort (`--effort`)**:
+   Match thinking overhead to task complexity:
+   * `agy --effort low --agent oma-quick`: Sub-second responses for typos, formatting, and simple rewrites.
+   * `agy --effort medium --agent oma-executor`: Balanced latency/quality for standard feature work and refactoring.
+   * `agy --effort high --agent oma-architect`: Maximum cognitive depth for systems architecture and subtle concurrency bugs.
+
+2. **Non-Interactive Paging Invariant**:
+   Export non-interactive pagers in agent subshells to prevent interactive `less`/`bat` terminal hangs:
+   ```bash
+   export PAGER=cat
+   export GH_PAGER=cat
+   ```
+
+3. **Pre-Approved Non-Destructive Tool Grants**:
+   Avoid interactive permission prompts during tool dispatch by whitelisting safe tools in `~/.gemini/config/config.json`:
+   ```json
+   {
+     "userSettings": {
+       "globalPermissionGrants": {
+         "allow": [
+           "mcp(serena/*)",
+           "mcp(chrome-devtools-mcp/*)",
+           "read_url(*)"
+         ]
+       }
+     }
+   }
+   ```
+
+4. **Prompt Prefix Cache Stability**:
+   Keep system contracts and team standards in `AGENTS.md` concise and static at the head of context. Dynamic prompt data placed at the tail preserves full KV-cache reuse.
+
+5. **Headless Automation via NDJSON**:
+   Run `agy` programmatically from scripts, cron, or CI/CD without terminal emulation:
+   ```bash
+   agy --input-format stream-json --output-format stream-json --print "Validate repo gates"
+   ```
+
+6. **Install `i-have-adhd` for Zero-Slop Output**:
+   ```bash
+   git clone https://github.com/ayghri/i-have-adhd.git /tmp/i-have-adhd
+   agy plugin import /tmp/i-have-adhd
+   rm -rf /tmp/i-have-adhd
+   ```
+

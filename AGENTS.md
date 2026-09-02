@@ -44,3 +44,13 @@
 
 4. **Tool Context Persistence**:
    - Ensure `.serena/config.json` exists in the project root for language server and code intelligence persistence across subagent subshells.
+
+---
+
+## 4. Communication & Output Protocol (Zero-Slop / ADHD-Optimized)
+
+1. **Lead with the Next Action**: The first line must be the concrete action (a runnable command, file path to edit, or direct decision). Eliminate conversational fluff.
+2. **Number Multi-Step Tasks**: Present sequential operations as clean numbered lists where each item is a single bounded action.
+3. **Suppress Tangents & Preamble**: Deliver code diffs, file links, and tool outputs directly without narrative preamble or conversational sign-offs.
+4. **Restate State Across Turns**: Explicitly state the active phase, open blockers, and next immediate action.
+5. **Make Wins Visible**: Emphasize completed milestones with clear evidence and verification status.
