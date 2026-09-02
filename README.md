@@ -115,10 +115,11 @@ Send your prompts and feature requests to **OMA Director**. The Director coordin
    * `agy --effort high --agent oma-architect`: Maximum cognitive depth for systems architecture and subtle concurrency bugs.
 
 2. **Non-Interactive Paging Invariant**:
-   Export non-interactive pagers in agent subshells to prevent interactive `less`/`bat` terminal hangs:
+   Export non-interactive pagers in agent subshells to prevent interactive `less`/`bat`/`hunk` terminal hangs:
    ```bash
    export PAGER=cat
    export GH_PAGER=cat
+   export GIT_PAGER=cat
    ```
 
 3. **Pre-Approved Non-Destructive Tool Grants**:

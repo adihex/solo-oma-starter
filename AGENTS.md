@@ -31,7 +31,7 @@
 ## 3. Solo MCP Invariants & Best Practices
 
 1. **Non-Interactive Terminal Execution**:
-   - Always run commands with `PAGER=cat`, `GH_PAGER=cat`, or `--no-pager` to prevent terminal capture inside interactive pagers (`less`, `bat`).
+   - Always run commands with `PAGER=cat`, `GH_PAGER=cat`, `GIT_PAGER=cat`, or `--no-pager` to prevent terminal capture inside interactive pagers (`less`, `bat`, `hunk`).
    - When running batch tests or long builds, redirect output to `/tmp/` files or capture logs cleanly.
 
 2. **Scratchpad Synchronization**:
