@@ -50,7 +50,23 @@ This starter integrates two core agentic frameworks:
 - `AGENTS.md`: Full 14-agent role catalog, operating boundaries, and Solo MCP tool invariants.
 - `.serena/config.json`: Pre-configured workspace definitions to ensure code intelligence works seamlessly across subshells.
 - `package.json` & `turbo.json`: Monorepo script baseline.
-- `scripts/bootstrap-solo.sh`: Helper initialization script.
+- `scripts/register-solo-agents.py`: Automatically syncs all 14 OMA agent tools and project launch configurations into Solo's local database.
+- `scripts/bootstrap-solo.sh`: Automated setup and initialization script.
+
+---
+
+## Configuration & Environment Setup
+
+### 1. Disable "AI: Out of credits" warnings (Antigravity Config)
+If `agy` displays `AI: Out of credits` warnings during execution, ensure `useAiCredits` is set to `false` in your global configuration:
+```json
+// ~/.gemini/config/config.json
+{
+  "userSettings": {
+    "useAiCredits": false
+  }
+}
+```
 
 ---
 
@@ -62,21 +78,21 @@ cp -R ~/Documents/solo-oma-starter/* /path/to/your-new-project/
 cp -R ~/Documents/solo-oma-starter/.serena /path/to/your-new-project/
 ```
 
-### Step 2: Register in Solo
-In Solo (or via your agent session):
-```json
-solo/create_project(
-  path: "/path/to/your-new-project",
-  name: "Your Project Name"
-)
+### Step 2: Register in Solo & Provision OMA Launch Tools
+Run the bootstrap script inside your project directory:
+```bash
+./scripts/bootstrap-solo.sh
 ```
-Solo will automatically parse `solo.yml` and register all background commands.
+This will:
+1. Initialize `.serena/config.json`.
+2. Register all 14 OMA agents in Solo's tool picker with their explicit `--agent oma-...` flags.
+3. Automatically re-wire project agent processes.
 
-### Step 3: Spawn OMA Director
-From Solo UI or via Solo MCP:
+### Step 3: Launch OMA Director
+In Solo, select **OMA Director** directly from the agent launch dropdown, or call via Solo MCP:
 ```json
 solo/spawn_agent(
-  agent_tool_id: 12,
+  agent_tool_id: 18,
   name: "OMA Director"
 )
 ```
